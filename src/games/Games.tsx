@@ -6,7 +6,8 @@ import type {Outfit} from '../services/play'
 import {bowlingPins,clampLane} from '../services/play'
 import {sound} from '../services/sound'
 
-function useTimers(){const timers=useRef(new Set<ReturnType<typeof setTimeout>>());useEffect(()=>()=>{timers.current.forEach(clearTimeout);timers.current.clear()},[]);return (fn:()=>void,ms:number)=>{const timer=setTimeout(()=>{timers.current.delete(timer);fn()},ms);timers.current.add(timer)}}
+import {usePlayTimers as useTimers} from './usePlayTimers'
+
 export function Dance({outfit}:{outfit:Outfit}){
   const [pose,setPose]=useState('wiggle'),[playing,setPlaying]=useState(false)
   useEffect(()=>()=>sound.stop(),[])

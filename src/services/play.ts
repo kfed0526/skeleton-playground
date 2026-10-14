@@ -1,5 +1,9 @@
-export type GameId='dance'|'bowling'|'bubbles'|'dressup'|'fireworks'
+export type GameId='dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
 export const games:{id:GameId;title:string;emoji:string;description:string;color:string}[]=[
+  {id:'drums',title:'骨頭人打鼓',emoji:'♫',description:'咚咚啪啪，自己開一場演奏會！',color:'peach'},
+  {id:'trampoline',title:'南瓜彈跳床',emoji:'🎃',description:'咻——骨頭人跳得好高！',color:'mint'},
+  {id:'candy-monster',title:'小怪獸餵糖果',emoji:'🍭',description:'三種點心，小怪獸都愛吃！',color:'pink'},
+  {id:'hide-ghost',title:'幽靈躲貓貓',emoji:'👻',description:'掀開小房子，小幽靈在哪裡？',color:'yellow'},
   {id:'dance',title:'骨頭人跳舞',emoji:'♫',description:'扭一扭，跟著節拍動起來！',color:'lilac'},
   {id:'bowling',title:'南瓜保齡球',emoji:'🎃',description:'南瓜滾過去，骨頭人倒一片！',color:'peach'},
   {id:'bubbles',title:'幽靈泡泡',emoji:'👻',description:'啵！啵！讓幽靈出來玩！',color:'mint'},
