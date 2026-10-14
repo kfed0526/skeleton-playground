@@ -1,50 +1,125 @@
 # Skeleton Playground · Nickson 的骨頭人遊樂場
 
-給接近 4 歲、喜歡萬聖節骨頭人的孩子玩的小遊戲。獨立於 japanese-game，沒有單字題目、倒數、失敗懲罰、帳號、廣告或追蹤。
+給 Nickson 的萬聖節小遊戲集合，以骨頭人、幽靈、南瓜和糖果為主題。適合接近 4 歲的孩子和家長一起玩，以大按鈕、簡單觸控和自由重玩為主；沒有單字考題、帳號、廣告或追蹤。此專案獨立於 japanese-game。
 
-## 五種自由玩法
+## 連結
 
-- 骨頭人跳舞：扭扭舞、機器舞與搖滾舞，可播放或休息。
-- 南瓜保齡球：選方向後點南瓜，或用 Pointer Events 把南瓜往前推；倒下後隨時再玩。
-- 幽靈泡泡：點破泡泡，泡泡會再長回來。
-- 骨頭人變裝：帽子、眼鏡與骨頭顏色；造型保存在裝置上，其他遊戲也會沿用。
-- 糖果煙火：點天空或按大按鈕放煙火，亦支援鍵盤 Enter／空白鍵。
+- [直接開始玩（iPad／手機／電腦）](https://kfed0526.github.io/skeleton-playground/)
+- [GitHub 原始碼](https://github.com/kfed0526/skeleton-playground)
+- [開發說明（本文件）](https://github.com/kfed0526/skeleton-playground/blob/main/README.md)
+- [建置與部署紀錄](https://github.com/kfed0526/skeleton-playground/actions)
+- [功能變更與 PR](https://github.com/kfed0526/skeleton-playground/pulls?q=is%3Apr)
+- [回報問題或提出新玩法](https://github.com/kfed0526/skeleton-playground/issues)
 
-## 開發與驗證
+## 目前的 18 款遊戲
 
-需要 Node.js 22+：
+| 遊戲 | 玩法 |
+| --- | --- |
+| 幽靈迷宮 | 用方向按鈕或鍵盤走到城堡、撿糖果，三張地圖可以切換。 |
+| 敲敲南瓜 | 點冒出頭的南瓜，變出糖果；可暫停，漏掉也能繼續。 |
+| 骨頭人搭火箭 | 選月亮、土星或糖果星球，飛行途中點星星，抵達後可重玩。 |
+| 骨頭人釣魚 | 點選四種魚朋友，甩竿釣起來，收進魚籃。 |
+| 幽靈接糖果 | 用左右按鈕或方向鍵移動小幽靈，接住落下的糖果；可暫停。 |
+| 南瓜彈珠台 | 發射小南瓜，按左右彈板撞星星；掉下去自動補球，可暫停。 |
+| 怪獸疊疊樂 | 選幽靈、南瓜或怪獸疊出六層小塔，再重新搭建。 |
+| 幽靈賽車 | 左右轉向閃避骨頭人，可暫停；碰到朋友仍能繼續開。 |
+| 骨頭人射擊 | 點南瓜靶，骨頭人用糖果發射器打靶；命中後自動補靶。 |
+| 骨頭人打鼓 | 三個鼓面有不同音色，骨頭人隨著敲擊動起來。 |
+| 南瓜彈跳床 | 點彈跳床讓骨頭人跳高高，跳躍高度輪流變化。 |
+| 小怪獸餵糖果 | 點點心再點嘴巴，或拖曳餵食；三種點心都能吃。 |
+| 幽靈躲貓貓 | 翻找五個藏身處，找到幽靈後可再玩，其他地方會送糖果。 |
+| 骨頭人跳舞 | 扭扭舞、機器舞、搖滾舞，可播放或休息。 |
+| 南瓜保齡球 | 選方向後點南瓜，或向前拖曳推球，把骨頭人球瓶撞倒。 |
+| 幽靈泡泡 | 點破泡泡放出幽靈，泡泡會再長回來。 |
+| 骨頭人變裝 | 選帽子、眼鏡與骨頭顏色，造型可套用到其他骨頭人場景。 |
+| 糖果煙火 | 點天空放煙火，也能使用鍵盤 Enter／空白鍵。 |
+
+## iPad 使用方式
+
+1. 用 Safari 開啟上面的遊戲網址，第一次使用需連網並等待完整載入。
+2. 點選想玩的遊戲；右上角喇叭按鈕可切換靜音。
+3. 可透過 Safari「分享 → 加入主畫面」，之後從主畫面進入。
+4. 首次完整載入後，遊戲程式、圖片與樣式會快取，可離線開啟。
+
+音效由裝置上的 Web Audio 即時合成，首次點按會解鎖音訊，不需下載外部音檔。離開遊戲或切到背景會停止聲音；賽車、接糖果、彈珠台與敲南瓜會在切到背景時自動暫停。瀏覽器不支援音訊時仍能遊玩。
+
+造型與靜音設定只儲存在目前瀏覽器的 localStorage，沒有帳號同步。重新載入或離開玩法後，分數和短暫遊戲進度會重設；清除網站資料會移除設定與離線快取。網站有新版時，請連網重新開啟或重新整理，讓瀏覽器取得更新。
+
+## 技術與檔案結構
+
+使用 React 19、TypeScript、Vite 6、Vitest 與 Playwright；實際安裝版本以 package-lock.json 為準。部署為靜態網站，不需要後端或資料庫。
+
+| 路徑 | 用途 |
+| --- | --- |
+| src/App.tsx | 首頁、遊戲切換、造型與靜音控制。 |
+| src/services/play.ts | 遊戲清單、遊戲識別碼、造型保存與保齡球工具。 |
+| src/services/sound.ts | 本機合成音效、靜音及背景音訊處理。 |
+| src/services/maze.ts | 迷宮地圖與移動規則。 |
+| src/components/ | 共用骨頭人 SVG 與圖示。 |
+| src/games/Games.tsx | 跳舞、保齡球、泡泡、變裝與煙火。 |
+| src/games/MoreGames.tsx | 打鼓、彈跳床、餵糖果與躲貓貓。 |
+| src/games/ActionGames.tsx | 幽靈賽車與骨頭人射擊。 |
+| src/games/PartyGames.tsx | 釣魚、接糖果、彈珠台與疊疊樂。 |
+| src/games/AdventureGames.tsx | 迷宮、敲南瓜與搭火箭。 |
+| src/games/usePlayTimers.ts | 離開遊戲時清除尚未執行的計時器。 |
+| public/sw.js | Service Worker，管理離線快取。 |
+| scripts/inject-sw-assets.mjs | 建置後注入離線資源清單與快取版本。 |
+| tests/ | Playwright 操作與畫面配置檢查。 |
+| .github/workflows/deploy.yml | main 更新後自動建置、單元測試並部署。 |
+
+角色採用原創 SVG 與系統 Emoji，不依賴外部 CDN；Emoji 外觀會因裝置而異。介面支援 prefers-reduced-motion，減少非必要動畫。
+
+## 本機開發
+
+需安裝 Node.js 22+、npm、Git；瀏覽器測試使用本機 Google Chrome。
 
 ```sh
+git clone https://github.com/kfed0526/skeleton-playground.git
+cd skeleton-playground
 npm ci
 npm run dev
+```
+
+開啟終端顯示的網址，並保留 /skeleton-playground/ 路徑。Vite 預設開發網址通常為 http://localhost:5173/skeleton-playground/；連接埠被占用時，以實際輸出為準。
+
+建置與檢查：
+
+```sh
 npm run build
 npm test
 npm run test:browser
 ```
 
-瀏覽器測試使用本機 Google Chrome，涵蓋 iPad 橫直向、觸控、拖曳、五個玩法、造型保存、靜音、離線重開、窄螢幕與減少動畫。未設定 ESLint。
+瀏覽器測試以建置後的 dist 為對象，因此須先執行 npm run build。Playwright 會在 4175 連接埠啟動預覽伺服器；已有同址伺服器時會重用，請確保它提供的是最新建置。另可用 npm run preview 手動預覽正式建置。
 
-## GitHub Pages 與 iPad
+目前有 5 項單元測試、26 項瀏覽器測試，涵蓋玩法操作、重複點按、暫停、三張迷宮通路、造型保存、靜音、離線重開、觸控、窄螢幕、橫直向與減少動畫。新增玩法時應同步更新遊戲數量與相關操作測試。專案未設定 ESLint。
 
-專案：`kfed0526/skeleton-playground`。網址：`https://kfed0526.github.io/skeleton-playground/`。Pages Source 選 GitHub Actions；main 更新後自動執行鎖定安裝、建置及測試再部署。Vite 前綴固定 `/skeleton-playground/`。
+自動測試使用 Chrome 與觸控模擬；仍需在實體 iPad Safari 確認音訊、觸控與加入主畫面的體驗。
 
-iPad Safari 首次在線完整載入後，可用分享 → 加入主畫面。App Shell、程式、樣式與圖示自動快取，可離線開啟；音效為本機 Web Audio 合成，不需要外部音檔。首次點擊會解鎖音訊，靜音會保存，離開遊戲或切到背景會停止聲音。瀏覽器不支援聲音時仍能正常玩。
+## 新增或修改遊戲
 
-圖像為原創 SVG 與系統 Emoji，沒有外部 CDN；系統 Emoji 外觀會依裝置不同。尊重 prefers-reduced-motion。造型只存在 localStorage，清除網站資料會重設。尚需在實體 iPad 驗證音訊及觸控體驗。
+1. 建立功能分支，在 src/games/ 新增或修改玩法與樣式。
+2. 在 src/services/play.ts 登記 GameId、標題、說明與首頁卡片顏色。
+3. 在 src/App.tsx 加入對應的遊戲元件。
+4. 骨頭人場景沿用共用 Skeleton 與 outfit；音效使用 sound 服務。
+5. 元件離開時清除計時器、動畫與事件監聽；持續移動的遊戲應支援暫停及背景處理。
+6. 更新本文件的遊戲清單與測試，確認觸控、手機寬度、橫向、靜音與離線可用。
+7. 執行建置與相關測試，建立 PR、檢查後合併至 main。
 
+保持玩法簡單、按鈕夠大、可以自由重玩，並讓音效與動畫提供清楚回饋。
 
-## 新增四種自由玩法
+## 部署與維護
 
-- 骨頭人打鼓：三個大鼓面各有不同音色，敲一下骨頭人會跟著動。
-- 南瓜彈跳床：點彈跳床或大按鈕，骨頭人會跳起來；可以連續點，跳躍高度輪流變化，不必比速度。
-- 小怪獸餵糖果：糖果、棒棒糖與餅乾都可餵，點點心再點嘴巴，或直接拖入；沒有吃錯的點心。
-- 幽靈躲貓貓：五個地方慢慢找小幽靈，其他地方也會送糖果，找到後可再躲一次，不會連續躲同一處。
+GitHub Pages 的 Source 設為 GitHub Actions。每次推送或合併到 main，部署流程會依序：
 
-新玩法共用原有造型、靜音、離線與減少動畫設定。離開遊戲會清除尚未執行的動畫／音效計時，不保留短暫遊戲狀態；已保存的造型不受影響。
+1. 使用 Node.js 22，執行 npm ci 安裝鎖定版本。
+2. 執行 npm run build，產生 dist 與離線資源版本。
+3. 執行 npm test；通過後上傳 dist 並發布到 GitHub Pages。
 
+目前 GitHub Actions 不會執行 Playwright 瀏覽器測試，合併前應在本機完成。也可在 Actions 頁面手動執行部署工作流程。
 
-新增幽靈賽車：三線道左右轉向、閃避骨頭人、可暫停與背景自動暫停。新增骨頭人射擊：糖果發射器打南瓜靶，命中後自動補靶。支援 iPad 點按與離線遊玩。
+Vite 的 base 固定為 /skeleton-playground/，部署網址為 https://kfed0526.github.io/skeleton-playground/。若更改 repository 名稱，需同步調整 vite.config.ts、測試 baseURL 與本文件連結。
 
-新增四款：骨頭人釣魚、幽靈接糖果、南瓜彈珠台、怪獸疊疊樂；共 15 款。接糖果與彈珠台支援暫停、背景自動暫停。
+發布後先確認 Actions 為成功，再開啟正式站檢查首頁入口與修改過的玩法。若仍看到舊版，保持連網後重新整理；必要時關閉網站分頁再開啟。最後手段才清除該網站資料，因為這也會重設造型、靜音及離線快取。
 
-新增幽靈迷宮（三張可切換地圖）、敲敲南瓜（可暫停）、骨頭人搭火箭（三個目的地與飛行收星星），共 18 款。
+文件整理日期：2026-10-15。
