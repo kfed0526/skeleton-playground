@@ -1,5 +1,9 @@
-export type GameId='ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
+export type GameId='fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
 export const games:{id:GameId;title:string;emoji:string;description:string;color:string}[]=[
+  {id:'fishing',title:'骨頭人釣魚',emoji:'🎣',description:'甩竿拉一拉，魚朋友來集合！',color:'mint'},
+  {id:'candy-catch',title:'幽靈接糖果',emoji:'🧺',description:'左右移動，接住甜甜糖果雨！',color:'pink'},
+  {id:'pinball',title:'南瓜彈珠台',emoji:'⭐',description:'彈板拍一拍，南瓜撞星星！',color:'yellow'},
+  {id:'monster-stack',title:'怪獸疊疊樂',emoji:'👾',description:'疊高高，蓋一座怪獸小塔！',color:'lilac'},
   {id:'ghost-race',title:'幽靈賽車',emoji:'🏎️',description:'小幽靈開車，左右閃過骨頭人！',color:'mint'},
   {id:'skeleton-shooter',title:'骨頭人射擊',emoji:'🍭',description:'發射魔法糖果，打中南瓜靶！',color:'peach'},
   {id:'drums',title:'骨頭人打鼓',emoji:'♫',description:'咚咚啪啪，自己開一場演奏會！',color:'peach'},
