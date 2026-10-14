@@ -1,5 +1,7 @@
-export type GameId='dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
+export type GameId='ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
 export const games:{id:GameId;title:string;emoji:string;description:string;color:string}[]=[
+  {id:'ghost-race',title:'幽靈賽車',emoji:'🏎️',description:'小幽靈開車，左右閃過骨頭人！',color:'mint'},
+  {id:'skeleton-shooter',title:'骨頭人射擊',emoji:'🍭',description:'發射魔法糖果，打中南瓜靶！',color:'peach'},
   {id:'drums',title:'骨頭人打鼓',emoji:'♫',description:'咚咚啪啪，自己開一場演奏會！',color:'peach'},
   {id:'trampoline',title:'南瓜彈跳床',emoji:'🎃',description:'咻——骨頭人跳得好高！',color:'mint'},
   {id:'candy-monster',title:'小怪獸餵糖果',emoji:'🍭',description:'三種點心，小怪獸都愛吃！',color:'pink'},
