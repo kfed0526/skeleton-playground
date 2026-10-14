@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test'
+export default defineConfig({testDir:'./tests',timeout:60000,workers:1,use:{baseURL:'http://127.0.0.1:4175/skeleton-playground/',channel:'chrome',viewport:{width:820,height:1180},hasTouch:true},webServer:{command:'node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4175',url:'http://127.0.0.1:4175/skeleton-playground/',reuseExistingServer:true}})

@@ -1,0 +1,5 @@
+const CACHE='skeleton-playground-__BUILD_HASH__'
+const PRECACHE_URLS=/*__PRECACHE_MANIFEST__*/[]
+self.addEventListener('install',event=>event.waitUntil((async()=>{await(await caches.open(CACHE)).addAll(PRECACHE_URLS);await self.skipWaiting()})()))
+self.addEventListener('activate',event=>event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('skeleton-playground-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})()))
+self.addEventListener('fetch',event=>{const r=event.request;if(r.method!=='GET'||new URL(r.url).origin!==self.location.origin)return;event.respondWith((async()=>{const cache=await caches.open(CACHE);if(r.mode==='navigate'){try{const response=await fetch(r);if(response.ok)await cache.put(r,response.clone());return response}catch{return await cache.match(r,{ignoreVary:true})||await cache.match('./index.html',{ignoreVary:true})||Response.error()}}const cached=await cache.match(r,{ignoreVary:true});if(cached)return cached;try{const response=await fetch(r);if(response.ok)await cache.put(r,response.clone());return response}catch{return Response.error()}})())})
