@@ -1,5 +1,8 @@
-export type GameId='fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
+export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
 export const games:{id:GameId;title:string;emoji:string;description:string;color:string}[]=[
+  {id:'ghost-maze',title:'幽靈迷宮',emoji:'🏰',description:'帶小幽靈找城堡，順路撿糖果！',color:'lilac'},
+  {id:'pumpkin-pop',title:'敲敲南瓜',emoji:'🎃',description:'南瓜探出頭，啵！變出糖果！',color:'peach'},
+  {id:'skeleton-rocket',title:'骨頭人搭火箭',emoji:'🚀',description:'選一顆星球，飛向太空收星星！',color:'mint'},
   {id:'fishing',title:'骨頭人釣魚',emoji:'🎣',description:'甩竿拉一拉，魚朋友來集合！',color:'mint'},
   {id:'candy-catch',title:'幽靈接糖果',emoji:'🧺',description:'左右移動，接住甜甜糖果雨！',color:'pink'},
   {id:'pinball',title:'南瓜彈珠台',emoji:'⭐',description:'彈板拍一拍，南瓜撞星星！',color:'yellow'},
