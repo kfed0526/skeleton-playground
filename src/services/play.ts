@@ -1,4 +1,4 @@
-export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'
+export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'|'puzzle'
 export const games:{id:GameId;title:string;emoji:string;description:string;color:string}[]=[
   {id:'ghost-maze',title:'幽靈迷宮',emoji:'🏰',description:'帶小幽靈找城堡，順路撿糖果！',color:'lilac'},
   {id:'pumpkin-pop',title:'敲敲南瓜',emoji:'🎃',description:'南瓜探出頭，啵！變出糖果！',color:'peach'},
@@ -18,6 +18,7 @@ export const games:{id:GameId;title:string;emoji:string;description:string;color
   {id:'bubbles',title:'幽靈泡泡',emoji:'👻',description:'啵！啵！讓幽靈出來玩！',color:'mint'},
   {id:'dressup',title:'骨頭人變裝',emoji:'🎩',description:'帽子、眼鏡，今天怎麼穿？',color:'pink'},
   {id:'fireworks',title:'糖果煙火',emoji:'🍬',description:'點點天空，放出甜甜的煙火！',color:'yellow'},
+  {id:'puzzle',title:'萬聖拼圖',emoji:'🧩',description:'交換拼圖片，完成派對大合照！',color:'lilac'},
 ]
 export type Outfit={hat:'none'|'witch'|'party'|'pirate';glasses:boolean;color:string}
 export const defaultOutfit:Outfit={hat:'party',glasses:false,color:'#fff5d5'}

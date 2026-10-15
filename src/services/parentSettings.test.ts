@@ -5,7 +5,7 @@ const allGameIds = [
   'ghost-maze', 'pumpkin-pop', 'skeleton-rocket', 'fishing', 'candy-catch',
   'pinball', 'monster-stack', 'ghost-race', 'skeleton-shooter', 'drums',
   'trampoline', 'candy-monster', 'hide-ghost', 'dance', 'bowling', 'bubbles',
-  'dressup', 'fireworks',
+  'dressup', 'fireworks', 'puzzle',
 ]
 
 it('shows every game until a parent saves a custom game library', () => {
