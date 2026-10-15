@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#20164f"/><g fill="#7d65c1" opacity=".45"><circle cx="155" cy="165" r="115"/><circle cx="1020" cy="180" r="145"/><circle cx="920" cy="650" r="190"/></g>
+  <g transform="translate(600 390)"><path d="M-220 150V-60C-220-220-105-300 0-300S220-220 220-60v280l-75-55-70 70-78-65-75 65-68-70-74 55Z" fill="#f7f4ff" stroke="#b8a9e8" stroke-width="18"/><ellipse cx="-75" cy="-95" rx="30" ry="42" fill="#291b50"/><ellipse cx="80" cy="-95" rx="30" ry="42" fill="#291b50"/><path d="M-75 30 Q0 100 78 25" fill="none" stroke="#291b50" stroke-width="20" stroke-linecap="round"/><path d="M-220-10Q-340-120-350-25M220-10Q330-130 350-20" fill="none" stroke="#f7f4ff" stroke-width="65" stroke-linecap="round"/></g>
+  <g fill="#ffcf4a"><text x="160" y="650" font-size="95">♪</text><text x="945" y="520" font-size="110">♫</text><text x="920" y="300" font-size="70">♪</text></g><text x="600" y="745" text-anchor="middle" font-family="sans-serif" font-size="70" font-weight="700" fill="#fff">跳舞幽靈</text>
+</svg>

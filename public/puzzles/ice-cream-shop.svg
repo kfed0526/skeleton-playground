@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#ffe2ee"/><rect y="510" width="1200" height="290" fill="#c5f1e6"/><path d="M120 115h960v400H120z" fill="#fff9e8" stroke="#7b3f73" stroke-width="18"/><path d="M120 115h960l-75 135H195Z" fill="#ff739d"/><path d="M195 115h130l-20 135H220zM455 115h130v135H435zM715 115h130l20 135H735zM975 115h105v135h-30z" fill="#fff5df"/>
+  <g transform="translate(600 440)"><path d="M-110 0 0 250 110 0Z" fill="#d69b56" stroke="#814d35" stroke-width="12"/><path d="M-80 40 70 175M70 40-70 175" stroke="#9d623f" stroke-width="10"/><circle cy="-70" r="115" fill="#9be17b"/><circle cy="-180" r="105" fill="#ff9ac0"/><circle cx="-55" cy="-190" r="12" fill="#2c2040"/><circle cx="48" cy="-190" r="12" fill="#2c2040"/><path d="M-45-145Q0-105 45-145" fill="none" stroke="#2c2040" stroke-width="12" stroke-linecap="round"/><circle cx="-25" cy="-245" r="12" fill="#ffdc5e"/><circle cx="35" cy="-225" r="12" fill="#7a65d8"/></g>
+  <text x="600" y="750" text-anchor="middle" font-family="sans-serif" font-size="66" font-weight="700" fill="#67365e">怪獸冰淇淋店</text>
+</svg>

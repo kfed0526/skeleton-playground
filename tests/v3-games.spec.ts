@@ -1,0 +1,100 @@
+import {expect, test} from '@playwright/test'
+
+test('ice cream shop serves orders and allows free creations', async ({page}) => {
+  await page.goto('./')
+  await page.getByRole('button', {name: /怪獸冰淇淋店/}).click()
+  await expect(page.getByRole('button', {name: /口味/})).toHaveCount(3)
+
+  await page.getByRole('button', {name: '草莓口味'}).click()
+  await page.getByRole('button', {name: '完成冰淇淋'}).click()
+  await expect(page.getByRole('status')).toContainText('完成 1 張訂單')
+
+  await page.getByRole('button', {name: '自由創作模式'}).click()
+  await expect(page.getByRole('button', {name: /口味/})).toHaveCount(6)
+  await page.getByRole('button', {name: '葡萄口味'}).click()
+  await page.getByRole('button', {name: '葡萄口味'}).click()
+  await page.getByRole('button', {name: '星星餅乾配料'}).click()
+  await page.getByRole('button', {name: '完成冰淇淋'}).click()
+  await expect(page.getByRole('status')).toContainText('怪獸好喜歡')
+})
+
+test('car wash completes four touch stages and customizes the next car', async ({page}) => {
+  await page.goto('./')
+  await page.getByRole('button', {name: /骨頭人洗車場/}).click()
+  const car = page.getByRole('application', {name: '洗車操作區'})
+
+  const scrub = async () => {
+    const box = await car.boundingBox()
+    const fractions = [.13, .25, .38, .5, .63, .75, .879]
+    await page.mouse.move(box!.x + box!.width * fractions[0], box!.y + box!.height * .6)
+    await page.mouse.down()
+    for (const fraction of fractions.slice(1)) await page.mouse.move(box!.x + box!.width * fraction, box!.y + box!.height * .6)
+    await page.mouse.up()
+  }
+
+  await expect(page.getByRole('heading', {name: /噴水/})).toBeVisible()
+  await scrub()
+  await expect(page.getByRole('heading', {name: /泡泡/})).toBeVisible()
+  await scrub()
+  await expect(page.getByRole('heading', {name: /沖洗/})).toBeVisible()
+  await scrub()
+  await expect(page.getByRole('heading', {name: /擦乾/})).toBeVisible()
+  await scrub()
+  await expect(page.getByRole('heading', {name: /汽車改裝/})).toBeVisible()
+  await page.getByRole('button', {name: '旋轉前輪'}).click()
+  await expect(page.getByRole('button', {name: '旋轉前輪'})).toHaveClass(/spinning/)
+
+  await page.getByRole('button', {name: '紅色車身'}).click()
+  await page.getByRole('button', {name: '星星輪胎'}).click()
+  await page.getByRole('button', {name: '愛心貼紙'}).click()
+  await page.getByRole('button', {name: '按喇叭'}).click()
+  await page.getByRole('button', {name: '完成改裝，下一台車'}).click()
+  await expect(page.getByRole('heading', {name: /噴水/})).toBeVisible()
+  for (let step = 0; step < 4; step += 1) await page.getByRole('button', {name: '繼續清潔車身'}).click()
+  await expect(page.getByRole('heading', {name: /泡泡/})).toBeVisible()
+})
+
+test('pumpkin train boards a passenger, changes route, stops and reaches a station', async ({page}) => {
+  await page.goto('./')
+  await page.getByRole('button', {name: /南瓜小火車/}).click()
+  await page.getByRole('button', {name: /讓幽靈乘客上車/}).click()
+  await page.getByRole('button', {name: '選右轉路線'}).click()
+  await page.getByRole('button', {name: '出發'}).click()
+  await page.getByRole('button', {name: '按火車喇叭'}).click()
+  await page.getByRole('button', {name: /星星糖果 1/}).click()
+  await page.getByRole('button', {name: '停車'}).click()
+  await expect(page.getByRole('status')).toContainText('停車')
+  await page.getByRole('button', {name: '繼續出發'}).click()
+  await expect(page.getByRole('status')).toContainText('抵達', {timeout: 5000})
+  await expect(page.getByText('⭐ 2')).toBeVisible()
+
+  await page.getByRole('button', {name: '自由開車模式'}).click()
+  await page.getByRole('button', {name: '出發'}).click()
+  await expect(page.getByRole('button', {name: '停車'})).toBeEnabled()
+  await page.getByRole('button', {name: '任務模式'}).click()
+  await page.waitForTimeout(1800)
+  await expect(page.getByRole('status')).toContainText('任務模式')
+})
+
+test('monster supermarket completes a picture list and free shopping checkout', async ({page}) => {
+  await page.goto('./')
+  await page.getByRole('button', {name: /怪獸小超市/}).click()
+  await expect(page.getByRole('button', {name: /加入購物車/})).toHaveCount(14)
+  await page.locator('button[data-wanted="true"]').first().click()
+  await expect(page.getByRole('button', {name: '前往結帳'})).toBeEnabled()
+  await page.getByRole('button', {name: '查看購物車'}).click()
+  await expect(page.getByRole('dialog', {name: '購物車內容'}).locator('div')).toHaveCount(1)
+  await page.getByRole('button', {name: '關閉購物車'}).click()
+  await page.getByRole('button', {name: '前往結帳'}).click()
+  await expect(page.getByRole('status')).toContainText('完成結帳', {timeout: 5000})
+
+  await page.getByRole('button', {name: '自由購物模式'}).click()
+  await page.getByRole('button', {name: /玩具熊，加入購物車/}).click()
+  await page.getByRole('button', {name: '前往結帳'}).click()
+  await expect(page.getByRole('status')).toContainText('完成結帳', {timeout: 5000})
+  await page.getByRole('button', {name: /玩具熊，加入購物車/}).click()
+  await page.getByRole('button', {name: '前往結帳'}).click()
+  await page.getByRole('button', {name: '購物清單模式'}).click()
+  await page.waitForTimeout(700)
+  await expect(page.getByRole('status')).toContainText('新購物清單')
+})

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#4b2679"/><stop offset="1" stop-color="#171238"/></linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#sky)"/><circle cx="980" cy="145" r="90" fill="#ffeaa7"/><path d="M0 610 Q260 520 510 620 T1200 600 V800 H0Z" fill="#262052"/>
+  <g fill="#fff1b8" opacity=".9"><circle cx="135" cy="145" r="8"/><circle cx="305" cy="80" r="6"/><circle cx="735" cy="115" r="7"/><circle cx="1080" cy="330" r="6"/></g>
+  <g transform="translate(600 430)"><rect x="-26" y="-235" width="52" height="90" rx="18" fill="#4f8c3a" transform="rotate(12)"/><ellipse rx="260" ry="205" fill="#f47b20"/><ellipse cx="-120" rx="100" ry="185" fill="#ff9d2e"/><ellipse cx="120" rx="100" ry="185" fill="#dd5d18"/><path d="M-140-65 Q-75-125-25-50 Q-80-25-140-65M35-52 Q95-125 150-55 Q90-25 35-52" fill="#2a153e"/><path d="M-150 55 Q0 190 160 50 Q70 105 10 75 Q-70 120-150 55" fill="#2a153e"/><g fill="#fff6d5"><path d="M-94 82  -42 110 -75 132Z"/><path d="M38 108 92 77 74 132Z"/></g></g>
+  <text x="600" y="735" text-anchor="middle" font-family="sans-serif" font-size="72" font-weight="700" fill="#fff4c4">開心南瓜</text>
+</svg>

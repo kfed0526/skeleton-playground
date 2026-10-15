@@ -1,0 +1,66 @@
+.ice-flavor.hinted {
+  outline: 5px solid #ffe16d;
+  animation: v3-hint .7s ease-in-out infinite alternate;
+}
+
+.car-wheel { padding: 0; }
+.car-wheel.spinning { animation: wheel-turn .65s linear 2; }
+
+.train-set.station-at-0 { left: 12%; top: 56%; }
+.train-set.station-at-1 { left: 28%; top: 22%; }
+.train-set.station-at-2 { left: 57%; top: 22%; }
+.train-set.station-at-3 { left: 66%; top: 56%; }
+.train-set.station-at-4 { left: 39%; top: 70%; }
+.train-set.running {
+  animation: train-route 1.5s ease-in-out forwards;
+}
+.train-set.running.detour {
+  animation: train-detour 2.1s ease-in-out forwards;
+}
+
+.cashier {
+  border: 0;
+  border-radius: 18px;
+  background: #e7d8ea;
+  color: #3f2c48;
+}
+
+.scanning-item {
+  position: absolute;
+  left: 20px;
+  top: 4px;
+  font-size: 32px;
+  animation: scan-item .35s linear;
+}
+
+.scanner strong { position: relative; z-index: 2; }
+.scanning-item + strong { display: inline-block; margin-left: 38px; }
+
+@keyframes wheel-turn { to { transform: rotate(360deg); } }
+@keyframes v3-hint { to { transform: scale(1.08); filter: brightness(1.25); } }
+@keyframes scan-item { from { transform: translateX(-25px); } to { transform: translateX(85px); } }
+@keyframes train-route {
+  from { left: var(--train-from-left); top: var(--train-from-top); }
+  45% { left: 48%; top: 18%; transform: rotate(-7deg); }
+  to { left: var(--train-to-left); top: var(--train-to-top); transform: rotate(0); }
+}
+@keyframes train-detour {
+  from { left: var(--train-from-left); top: var(--train-from-top); }
+  25% { left: 67%; top: 20%; transform: rotate(-8deg); }
+  50% { left: 68%; top: 66%; transform: rotate(6deg); }
+  75% { left: 18%; top: 65%; transform: rotate(3deg); }
+  to { left: var(--train-to-left); top: var(--train-to-top); transform: rotate(0); }
+}
+
+@media (max-width: 650px) {
+  .train-set.station-at-0 { left: 9%; top: 58%; }
+  .train-set.station-at-1 { left: 22%; top: 24%; }
+  .train-set.station-at-2 { left: 50%; top: 24%; }
+  .train-set.station-at-3 { left: 58%; top: 58%; }
+  .train-set.station-at-4 { left: 34%; top: 70%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ice-flavor.hinted, .car-wheel.spinning, .scanning-item { animation: none; }
+  .train-set.running, .train-set.running.detour { animation: none; left: var(--train-to-left); top: var(--train-to-top); }
+}
