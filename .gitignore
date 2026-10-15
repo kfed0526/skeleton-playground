@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .tools/
+graphify-out/
 test-results/
 playwright-report/
 *.tsbuildinfo
