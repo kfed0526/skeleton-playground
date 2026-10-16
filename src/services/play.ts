@@ -1,4 +1,4 @@
-export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'|'ice-cream-shop'|'car-wash'|'pumpkin-train'|'monster-market'|'puzzle'|'pumpkin-adventure'|'skeleton-construction'|'monster-rhythm'|'monster-pet-house'
+export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'|'ice-cream-shop'|'car-wash'|'pumpkin-train'|'monster-market'|'puzzle'|'pumpkin-adventure'|'skeleton-construction'|'monster-rhythm'|'monster-pet-house'|'monster-art'|'monster-hospital'|'ghost-post'
 export const games:{id:GameId;title:string;emoji:string;description:string;color:string}[]=[
   {id:'ghost-maze',title:'幽靈迷宮',emoji:'🏰',description:'帶小幽靈找城堡，順路撿糖果！',color:'lilac'},
   {id:'pumpkin-pop',title:'敲敲南瓜',emoji:'🎃',description:'南瓜探出頭，啵！變出糖果！',color:'peach'},
@@ -27,6 +27,9 @@ export const games:{id:GameId;title:string;emoji:string;description:string;color
   {id:'skeleton-construction',title:'骨頭人工地',emoji:'🧱',description:'照藍圖蓋房子，也能自由堆積木！',color:'mint'},
   {id:'monster-rhythm',title:'怪獸節奏派對',emoji:'🎵',description:'跟著怪獸記節奏，也能自由演奏！',color:'pink'},
   {id:'monster-pet-house',title:'怪獸寵物屋',emoji:'🐾',description:'餵食、洗澡、換裝，陪寵物開心玩！',color:'yellow'},
+  {id:'monster-art',title:'怪獸塗鴉屋',emoji:'🎨',description:'畫一畫、蓋印章，替怪獸塗顏色！',color:'pink'},
+  {id:'monster-hospital',title:'怪獸小醫院',emoji:'🩺',description:'量體溫、貼貼布，陪朋友好好休息！',color:'mint'},
+  {id:'ghost-post',title:'幽靈郵差',emoji:'📮',description:'看看包裹圖案，送到一樣的家！',color:'yellow'},
 ]
 export type Outfit={hat:'none'|'witch'|'party'|'pirate';glasses:boolean;color:string}
 export const defaultOutfit:Outfit={hat:'party',glasses:false,color:'#fff5d5'}

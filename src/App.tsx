@@ -3,6 +3,7 @@ import Announcement from './components/Announcement'
 import ParentAdmin from './components/ParentAdmin'
 import {BubbleIcon, DiscoIcon} from './components/PlayIcons'
 import Skeleton from './components/Skeleton'
+import {MonsterArt, MonsterHospital, GhostPost} from './games/CreativeGames'
 import {GhostRace, SkeletonShooter} from './games/ActionGames'
 import {GhostMaze, PumpkinPop, SkeletonRocket} from './games/AdventureGames'
 import {Bowling, Bubbles, Dance, Dressup, Fireworks} from './games/Games'
@@ -74,6 +75,9 @@ export default function App() {
       <p className="parent-note">👨‍👩‍👦 一起扭扭、笑笑，想休息隨時回來。第一次開啟需要網路，載入完成後也能離線玩。</p>
     </main> : <main className={`game game-${game}`}>
       <div className="game-heading"><button className="back-button" onClick={() => setGame(null)}>← 回遊樂場</button><h1>{current?.emoji} {current?.title}</h1><span className="free-play">隨你玩，慢慢來 ✦</span></div>
+      {game === 'monster-art' && <MonsterArt/>}
+      {game === 'monster-hospital' && <MonsterHospital/>}
+      {game === 'ghost-post' && <GhostPost/>}
       {game === 'ghost-maze' && <GhostMaze/>}
       {game === 'pumpkin-pop' && <PumpkinPop/>}
       {game === 'skeleton-rocket' && <SkeletonRocket outfit={outfit}/>}

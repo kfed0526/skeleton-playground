@@ -2,7 +2,7 @@ import {expect, test} from '@playwright/test'
 
 test('parent can hide a game and the saved library survives reload', async ({page}) => {
   await page.goto('./')
-  await expect(page.locator('.game-tile')).toHaveCount(27)
+  await expect(page.locator('.game-tile')).toHaveCount(30)
 
   await page.getByRole('button', {name: '家長管理'}).click()
   await expect(page.getByRole('dialog', {name: '家長管理'})).toBeVisible()
@@ -21,10 +21,10 @@ test('parent can hide a game and the saved library survives reload', async ({pag
   await page.getByRole('button', {name: '儲存遊戲庫'}).click()
 
   await expect(page.getByRole('button', {name: '家長管理'})).toBeFocused()
-  await expect(page.locator('.game-tile')).toHaveCount(26)
+  await expect(page.locator('.game-tile')).toHaveCount(29)
   await expect(page.getByRole('button', {name: /跳舞/})).toHaveCount(0)
 
   await page.reload()
-  await expect(page.locator('.game-tile')).toHaveCount(26)
+  await expect(page.locator('.game-tile')).toHaveCount(29)
   await expect(page.getByRole('button', {name: /跳舞/})).toHaveCount(0)
 })
