@@ -22,9 +22,11 @@ it('rejects invalid dates and release numbers', () => {
   expect(() => formatReleaseVersion('2026-10-15', 0)).toThrow('大於零')
 })
 
-it('publishes the V3 announcement with today\'s first release number', () => {
-  expect(latestAnnouncement?.version).toBe('20261015.v1')
-  expect(latestAnnouncement?.publishedOn).toBe('2026-10-15')
+it('publishes the four new games with today\'s first release number', () => {
+  expect(latestAnnouncement?.version).toBe('20261016.v1')
+  expect(latestAnnouncement?.publishedOn).toBe('2026-10-16')
   expect(latestAnnouncement?.added).toHaveLength(3)
   expect(latestAnnouncement?.fixed).toHaveLength(2)
+  expect(latestAnnouncement?.added.join(' ')).toContain('南瓜橫向大冒險')
+  expect(latestAnnouncement?.added.join(' ')).toContain('怪獸寵物屋')
 })
