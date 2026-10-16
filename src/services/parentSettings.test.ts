@@ -6,7 +6,8 @@ const allGameIds = [
   'pinball', 'monster-stack', 'ghost-race', 'skeleton-shooter', 'drums',
   'trampoline', 'candy-monster', 'hide-ghost', 'dance', 'bowling', 'bubbles',
   'dressup', 'fireworks', 'ice-cream-shop', 'car-wash', 'pumpkin-train',
-  'monster-market', 'puzzle',
+  'monster-market', 'puzzle', 'pumpkin-adventure', 'skeleton-construction',
+  'monster-rhythm', 'monster-pet-house',
 ]
 
 it('shows every game until a parent saves a custom game library', () => {

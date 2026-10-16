@@ -10,6 +10,7 @@ import {CandyMonster, Drums, HideGhost, Trampoline} from './games/MoreGames'
 import {CandyCatch, Fishing, MonsterStack, PumpkinPinball} from './games/PartyGames'
 import PuzzleGame from './games/PuzzleGame'
 import {CarWash, IceCreamShop, MonsterSupermarket, PumpkinTrain} from './games/V3Games'
+import {MonsterPetHouse, MonsterRhythmParty, PumpkinAdventure, SkeletonConstruction} from './games/V4Games'
 import {latestAnnouncement} from './services/announcements'
 import {readEnabledGameIds, saveEnabledGameIds} from './services/parentSettings'
 import {games, readOutfit, saveOutfit} from './services/play'
@@ -96,6 +97,10 @@ export default function App() {
       {game === 'pumpkin-train' && <PumpkinTrain/>}
       {game === 'monster-market' && <MonsterSupermarket/>}
       {game === 'puzzle' && <PuzzleGame/>}
+      {game === 'pumpkin-adventure' && <PumpkinAdventure/>}
+      {game === 'skeleton-construction' && <SkeletonConstruction outfit={outfit}/>}
+      {game === 'monster-rhythm' && <MonsterRhythmParty outfit={outfit}/>}
+      {game === 'monster-pet-house' && <MonsterPetHouse/>}
     </main>}
 
     <ParentAdmin enabledGameIds={enabledGameIds} onSave={updateGameLibrary}/>
