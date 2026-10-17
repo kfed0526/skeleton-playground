@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import {MonsterFlashlight, PumpkinBridge, SkeletonSlide} from './games/DiscoveryGames'
 import Announcement from './components/Announcement'
 import GameLabels from './components/GameLabels'
 import ParentAdmin from './components/ParentAdmin'
@@ -78,6 +79,9 @@ export default function App() {
     </main> : <main className={`game game-${game}`}>
       <div className="game-heading"><button className="back-button" onClick={() => setGame(null)}>← 回遊樂場</button><h1>{current?.emoji} {current?.title}</h1><span className="free-play">隨你玩，慢慢來 ✦</span></div>
       {current && <div className="game-guidance"><GameLabels game={current}/>{current.guidance && <p>{current.guidance}</p>}</div>}
+      {game === 'monster-flashlight' && <MonsterFlashlight/>}
+      {game === 'pumpkin-bridge' && <PumpkinBridge/>}
+      {game === 'skeleton-slide' && <SkeletonSlide outfit={outfit}/>}
       {game === 'monster-art' && <MonsterArt/>}
       {game === 'monster-hospital' && <MonsterHospital/>}
       {game === 'ghost-post' && <GhostPost/>}

@@ -1,6 +1,6 @@
 import {expect,it,vi} from 'vitest'
 import {bowlingPins,clampLane,defaultOutfit,games,readOutfit,saveOutfit} from './play'
-it('keeps the thirty playground entries unique',()=>{expect(games).toHaveLength(30);expect(new Set(games.map(g=>g.id)).size).toBe(30)})
+it('keeps the thirty-three playground entries unique',()=>{expect(games).toHaveLength(33);expect(new Set(games.map(g=>g.id)).size).toBe(33)})
 it('makes every supported bowling direction knock pins without going out of bounds',()=>{for(const lane of [.2,.25,.5,.75,.8]){expect(bowlingPins(lane)).toHaveLength(6);expect(bowlingPins(lane).some(Boolean)).toBe(true)}expect(bowlingPins(.5).every(Boolean)).toBe(true);expect(clampLane(-1)).toBe(.2);expect(clampLane(2)).toBe(.8)})
 it('saves outfits without needing an account and rejects invalid saved data',()=>{let saved:string|null=null;vi.stubGlobal('localStorage',{getItem:()=>saved,setItem:(_:string,v:string)=>{saved=v}});saveOutfit({...defaultOutfit,hat:'witch',glasses:true});expect(readOutfit().hat).toBe('witch');expect(readOutfit().glasses).toBe(true);saved='{"hat":"unknown"}';expect(readOutfit()).toEqual(defaultOutfit);saved='broken';expect(readOutfit()).toEqual(defaultOutfit);vi.unstubAllGlobals()})
 it('still works when local storage is unavailable',()=>{vi.stubGlobal('localStorage',{getItem(){throw Error()},setItem(){throw Error()}});expect(readOutfit()).toEqual(defaultOutfit);expect(()=>saveOutfit(defaultOutfit)).not.toThrow();vi.unstubAllGlobals()})
