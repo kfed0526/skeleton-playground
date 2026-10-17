@@ -11,7 +11,7 @@
 - [功能變更與 PR](https://github.com/kfed0526/skeleton-playground/pulls?q=is%3Apr)
 - [回報問題或提出新玩法](https://github.com/kfed0526/skeleton-playground/issues)
 
-## 目前的 33 款遊戲
+## 目前的 35 款遊戲
 
 | 遊戲 | 玩法 |
 | --- | --- |
@@ -51,6 +51,9 @@
 | 南瓜搭橋 | 觀察河寬，選短、中、長木板搭橋，讓南瓜過河。 |
 | 骨頭人溜滑梯 | 點三段滑梯切換方向，放球觀察路線並抵達指定終點。 |
 
+| 怪獸刷牙屋 | 拖動牙刷來回清潔十二顆牙齒，也能逐顆點按三下。 |
+| 怪獸吹風屋 | 拖動或點按吹乾三束頭髮，可選風力與三種髮型。 |
+
 ## iPad 使用方式
 
 1. 用 Safari 開啟上面的遊戲網址，第一次使用需連網並等待完整載入。
@@ -84,6 +87,7 @@
 | src/games/V3Games.tsx | 冰淇淋店、洗車場、小火車與小超市。 |
 | src/games/PuzzleGame.tsx | 六主題、五難度的點選／拖曳拼圖。 |
 | src/games/V4Games.tsx | 橫向冒險、骨頭人工地、節奏派對與怪獸寵物屋。 |
+| src/games/CareGames.tsx | 怪獸刷牙屋與吹風屋，支援拖動及點按。 |
 | src/games/DiscoveryGames.tsx | 手電筒、搭橋與溜滑梯。 |
 | src/games/CreativeGames.tsx | 塗鴉屋、小醫院與幽靈郵差。 |
 | src/games/usePlayTimers.ts | 離開遊戲時清除尚未執行的計時器。 |
@@ -161,4 +165,4 @@ Vite 的 base 固定為 /skeleton-playground/，部署網址為 https://kfed0526
 
 ## 難易度與建議年齡
 
-33 款遊戲在首頁、遊戲內與家長管理顯示分級。資料集中在 `src/services/play.ts` 的 `difficulty`、`minAge` 與可選的 `guidance`。輕鬆代表自由點玩，適中代表配對或多步驟操作，挑戰代表反應或記憶需求。建議年齡是依目前玩法的設計估計，家長可陪玩並依孩子的步調選擇。拼圖與訂單等多模式遊戲在遊戲內另有提示。
+35 款遊戲在首頁、遊戲內與家長管理顯示分級。資料集中在 `src/services/play.ts` 的 `difficulty`、`minAge` 與可選的 `guidance`。輕鬆代表自由點玩，適中代表配對或多步驟操作，挑戰代表反應或記憶需求。建議年齡是依目前玩法的設計估計，家長可陪玩並依孩子的步調選擇。拼圖與訂單等多模式遊戲在遊戲內另有提示。

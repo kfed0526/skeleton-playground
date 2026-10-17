@@ -4,7 +4,7 @@
 
 ## 專案定位
 
-給幼兒與家長使用的萬聖節遊戲集合，共 33 款。採 React 19、TypeScript、Vite 6，為純前端靜態網站，沒有後端 API、資料庫或帳號同步。圖像以 SVG、Emoji 與 CSS 呈現，音效由 Web Audio 即時合成。
+給幼兒與家長使用的萬聖節遊戲集合，共 35 款。採 React 19、TypeScript、Vite 6，為純前端靜態網站，沒有後端 API、資料庫或帳號同步。圖像以 SVG、Emoji 與 CSS 呈現，音效由 Web Audio 即時合成。
 
 ## 執行與資料關係
 
@@ -14,7 +14,7 @@ flowchart TD
   MAIN --> APP[App.tsx：首頁與遊戲切換]
   MAIN --> STYLE[style.css：全站樣式]
   MAIN --> SW[正式環境註冊 Service Worker]
-  APP --> CATALOG[services/play.ts：33 款遊戲目錄與造型]
+  APP --> CATALOG[services/play.ts：35 款遊戲目錄與造型]
   APP --> GAMES[games/*.tsx：遊戲元件]
   APP --> PARENT[components/ParentAdmin.tsx]
   APP --> NEWS[components/Announcement.tsx]
@@ -45,6 +45,7 @@ flowchart TD
 | Games.tsx | 5 | 骨頭人跳舞、南瓜保齡球、幽靈泡泡、骨頭人變裝、糖果煙火 | play.ts 的保齡球工具 |
 | V3Games.tsx | 4 | 怪獸冰淇淋店、骨頭人洗車場、南瓜小火車、怪獸小超市 | v3Games.ts |
 | PuzzleGame.tsx | 1 | 南瓜拼圖王 | puzzle.ts |
+| CareGames.tsx | 2 | 怪獸刷牙屋、怪獸吹風屋 | 元件內處理 |
 | DiscoveryGames.tsx | 3 | 怪獸手電筒、南瓜搭橋、骨頭人溜滑梯 | 元件內處理 |
 | CreativeGames.tsx | 3 | 怪獸塗鴉屋、怪獸小醫院、幽靈郵差 | 元件內處理 |
 | V4Games.tsx | 4 | 南瓜橫向大冒險、骨頭人工地、怪獸節奏派對、怪獸寵物屋 | v4Games.ts |

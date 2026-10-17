@@ -7,7 +7,7 @@ const allGameIds = [
   'trampoline', 'candy-monster', 'hide-ghost', 'dance', 'bowling', 'bubbles',
   'dressup', 'fireworks', 'ice-cream-shop', 'car-wash', 'pumpkin-train',
   'monster-market', 'puzzle', 'pumpkin-adventure', 'skeleton-construction',
-  'monster-rhythm', 'monster-pet-house', 'monster-art', 'monster-hospital', 'ghost-post', 'monster-flashlight', 'pumpkin-bridge', 'skeleton-slide',
+  'monster-rhythm', 'monster-pet-house', 'monster-art', 'monster-hospital', 'ghost-post', 'monster-flashlight', 'pumpkin-bridge', 'skeleton-slide', 'monster-brush', 'monster-dryer',
 ]
 
 it('shows every game until a parent saves a custom game library', () => {

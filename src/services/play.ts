@@ -1,4 +1,4 @@
-export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'|'ice-cream-shop'|'car-wash'|'pumpkin-train'|'monster-market'|'puzzle'|'pumpkin-adventure'|'skeleton-construction'|'monster-rhythm'|'monster-pet-house'|'monster-art'|'monster-hospital'|'ghost-post'|'monster-flashlight'|'pumpkin-bridge'|'skeleton-slide'
+export type GameId='ghost-maze'|'pumpkin-pop'|'skeleton-rocket'|'fishing'|'candy-catch'|'pinball'|'monster-stack'|'ghost-race'|'skeleton-shooter'|'dance'|'bowling'|'bubbles'|'dressup'|'fireworks'|'drums'|'trampoline'|'candy-monster'|'hide-ghost'|'ice-cream-shop'|'car-wash'|'pumpkin-train'|'monster-market'|'puzzle'|'pumpkin-adventure'|'skeleton-construction'|'monster-rhythm'|'monster-pet-house'|'monster-art'|'monster-hospital'|'ghost-post'|'monster-flashlight'|'pumpkin-bridge'|'skeleton-slide'|'monster-brush'|'monster-dryer'
 export type GameDifficulty = '輕鬆' | '適中' | '挑戰'
 export type GameInfo = {id:GameId;title:string;emoji:string;description:string;color:string;difficulty:GameDifficulty;minAge:number;guidance?:string}
 export const games:GameInfo[]=[
@@ -35,6 +35,8 @@ export const games:GameInfo[]=[
   {id:'monster-flashlight',title:'怪獸手電筒',emoji:'🔦',description:'移動小光圈，找出夜晚花園的寶物！',color:'lilac',difficulty:'適中',minAge:3},
   {id:'pumpkin-bridge',title:'南瓜搭橋',emoji:'🌉',description:'選剛剛好的木板，幫南瓜過河！',color:'mint',difficulty:'適中',minAge:4},
   {id:'skeleton-slide',title:'骨頭人溜滑梯',emoji:'🎢',description:'轉轉滑梯接路線，讓小球滑到城堡！',color:'peach',difficulty:'挑戰',minAge:4},
+  {id:'monster-brush',title:'怪獸刷牙屋',emoji:'✨',description:'怪獸張大嘴巴，刷出亮晶晶的牙齒！',color:'mint',difficulty:'輕鬆',minAge:2},
+  {id:'monster-dryer',title:'怪獸吹風屋',emoji:'💨',description:'吹乾濕頭髮，再幫怪獸換個造型！',color:'pink',difficulty:'輕鬆',minAge:2},
 ]
 export type Outfit={hat:'none'|'witch'|'party'|'pirate';glasses:boolean;color:string}
 export const defaultOutfit:Outfit={hat:'party',glasses:false,color:'#fff5d5'}
