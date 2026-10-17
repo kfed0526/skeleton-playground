@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from 'react'
+import GameLabels from './GameLabels'
 import {games} from '../services/play'
 import type {GameId} from '../services/play'
 import {verifyParentPassword} from '../services/parentSettings'
@@ -140,7 +141,7 @@ export default function ParentAdmin({enabledGameIds, onSave}: ParentAdminProps) 
               />
               <span className="parent-game-check" aria-hidden="true">✓</span>
               <span className="parent-game-emoji" aria-hidden="true">{game.emoji}</span>
-              <span><strong>{game.title}</strong><small>{game.description}</small></span>
+              <span><strong>{game.title}</strong><GameLabels game={game}/><small>{game.description}</small></span>
             </label>)}
           </div>
           <div className="parent-admin-actions">

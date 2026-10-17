@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import Announcement from './components/Announcement'
+import GameLabels from './components/GameLabels'
 import ParentAdmin from './components/ParentAdmin'
 import {BubbleIcon, DiscoIcon} from './components/PlayIcons'
 import Skeleton from './components/Skeleton'
@@ -66,15 +67,17 @@ export default function App() {
       <Announcement announcement={latestAnnouncement}/>
       <section className="game-section">
         <div className="section-heading"><h2>想玩哪一個？</h2><span>點一下，就出發！ ↗</span></div>
+        <p className="rating-note">輕鬆：自由點玩 · 適中：配對或步驟 · 挑戰：反應或記憶。年齡依玩法估計，可由家長陪玩，照孩子的步調選擇。</p>
         {visibleGames.length ? <div className="game-grid">{visibleGames.map((item, index) => <button className={`game-tile ${item.color}`} key={item.id} onClick={() => openGame(item.id)}>
           <span className="tile-number">{String(index + 1).padStart(2, '0')}</span>
           <span className="tile-art">{item.id === 'dance' ? <DiscoIcon/> : item.id === 'bubbles' ? <BubbleIcon/> : item.emoji}</span>
-          <strong>{item.title}</strong><small>{item.description}</small><span className="tile-arrow" aria-hidden="true">↗</span>
+          <strong>{item.title}</strong><GameLabels game={item}/><small>{item.description}</small><span className="tile-arrow" aria-hidden="true">↗</span>
         </button>)}</div> : <p className="empty-game-library">目前沒有開放的遊戲，請由家長管理選擇遊戲。</p>}
       </section>
       <p className="parent-note">👨‍👩‍👦 一起扭扭、笑笑，想休息隨時回來。第一次開啟需要網路，載入完成後也能離線玩。</p>
     </main> : <main className={`game game-${game}`}>
       <div className="game-heading"><button className="back-button" onClick={() => setGame(null)}>← 回遊樂場</button><h1>{current?.emoji} {current?.title}</h1><span className="free-play">隨你玩，慢慢來 ✦</span></div>
+      {current && <div className="game-guidance"><GameLabels game={current}/>{current.guidance && <p>{current.guidance}</p>}</div>}
       {game === 'monster-art' && <MonsterArt/>}
       {game === 'monster-hospital' && <MonsterHospital/>}
       {game === 'ghost-post' && <GhostPost/>}
